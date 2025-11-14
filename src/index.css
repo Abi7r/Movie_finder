@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+.star-rating {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 4px;
+}
+
+.star-rating > * {
+  flex-shrink: 0;
+}

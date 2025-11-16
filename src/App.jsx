@@ -4,7 +4,7 @@ import Navbar from "./components/Layout/Navbar";
 import MovieList from "./components/Movie/MovieList";
 function App() {
   const [searchResults, setSearchResults] = useState([]);
-  const [Found, setFound] = useState(false);
+  const [Found, setFound] = useState(null);
   return (
     <>
       <Navbar setSearch={setSearchResults} setFound={setFound} />

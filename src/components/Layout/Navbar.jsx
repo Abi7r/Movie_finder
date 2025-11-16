@@ -1,6 +1,6 @@
 import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
-const API_KEY = "30e9dcae";
+
 function Navbar({ setSearch, setFound }) {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -8,9 +8,12 @@ function Navbar({ setSearch, setFound }) {
     e.preventDefault();
     if (!searchQuery.trim()) return;
     console.log("Searching for", searchQuery);
+    console.log("API Key:", import.meta.env.VITE_API_KEY);
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchQuery}`
+        `http://www.omdbapi.com/?apikey=${
+          import.meta.env.VITE_API_KEY
+        }&s=${searchQuery}`
       );
       const data = await response.json();
       console.log("After fetching", data);
@@ -29,17 +32,17 @@ function Navbar({ setSearch, setFound }) {
 
   return (
     <>
-      <nav className="shadow-md bg-blue-600">
+      <nav className="shadow-md bg-purple-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <img
-                src="https://e7.pngegg.com/pngimages/616/35/png-clipart-red-and-white-film-icon-area-text-brand-sign-apps-google-movies-text-rectangle.png"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRJCqA1c9KLYAdr5qZxln-09PBNCLF44Iq3A&s"
                 alt=""
                 className="w-14 h-10 rounded-md my-2 "
               />
               <span className="font-bold text-gray-800 text-xl ml-2">
-                Movie App
+                Movie Finder
               </span>
             </div>
             <div className="flex-1 max-w-md ">

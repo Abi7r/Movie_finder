@@ -1,13 +1,13 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
-  apiKey: "AIzaSyD7nGTNdGrKno8FPGJCQhTzz5dsol39zjw",
-  authDomain: "movierecomendation-ba370.firebaseapp.com",
-  projectId: "movierecomendation-ba370",
-  storageBucket: "movierecomendation-ba370.firebasestorage.app",
-  messagingSenderId: "1062933075393",
-  appId: "1:1062933075393:web:775543a24b08d155650b40",
-  measurementId: "G-D75VZ7F8JY",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
